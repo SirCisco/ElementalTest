@@ -1,8 +1,6 @@
 console.log("ENV CHECK:", process.env.NODE_ENV);
 console.log("TOKEN EXISTS:", !!process.env.BOT_TOKEN);
 
-require("dotenv").config(); // only local use
-
 const {
   Client,
   GatewayIntentBits,
