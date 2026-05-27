@@ -343,5 +343,5 @@ client.once("ready", () => {
 
 process.on("unhandledRejection", console.error);
 process.on("uncaughtException", console.error);
-
+console.log("TOKEN:", process.env.BOT_TOKEN);
 client.login(process.env.BOT_TOKEN);
