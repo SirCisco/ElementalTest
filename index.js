@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '.env.production' });
+
 console.log("ENV CHECK:", process.env.NODE_ENV);
 console.log("TOKEN EXISTS:", !!process.env.DISCORD_TOKEN);
 
