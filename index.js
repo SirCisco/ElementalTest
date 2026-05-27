@@ -1,5 +1,5 @@
 console.log("ENV CHECK:", process.env.NODE_ENV);
-console.log("TOKEN EXISTS:", !!process.env.BOT_TOKEN);
+console.log("TOKEN EXISTS:", !!process.env.DISCORD_TOKEN);
 
 const {
   Client,
@@ -345,6 +345,6 @@ client.once("ready", () => {
 process.on("unhandledRejection", console.error);
 process.on("uncaughtException", console.error);
 
-console.log("TOKEN:", process.env.BOT_TOKEN);
+console.log("TOKEN:", process.env.DISCORD_TOKEN);
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.DISCORD_TOKEN);
