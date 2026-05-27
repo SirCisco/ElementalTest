@@ -1,12 +1,8 @@
 console.log("ENV CHECK:", process.env.NODE_ENV);
-console.log("TOKEN EXISTS:", !!process.env.BOT_TOKEN");
+console.log("TOKEN EXISTS:", !!process.env.BOT_TOKEN);
 
-const { Client, GatewayIntentBits } = require("discord.js");
-require("dotenv").config(); // only affects local, Railway ignores this
+require("dotenv").config(); // only local use
 
-const client = new Client({
-  intents: [GatewayIntentBits.Guilds]
-});
 const {
   Client,
   GatewayIntentBits,
@@ -16,8 +12,6 @@ const {
   EmbedBuilder,
   Partials
 } = require("discord.js");
-
-require("dotenv").config();
 
 const client = new Client({
   intents: [
@@ -153,7 +147,7 @@ async function safeDM(user, content) {
   }
 }
 
-/* ========================= INTRO (UNCHANGED TEXT) ========================= */
+/* ========================= INTRO ========================= */
 
 async function runIntro(user) {
   try {
@@ -180,7 +174,7 @@ async function runIntro(user) {
   } catch {}
 }
 
-/* ========================= START QUIZ ========================= */
+/* ========================= QUIZ FLOW ========================= */
 
 async function startQuiz(interaction, user) {
   try {
@@ -352,5 +346,7 @@ client.once("ready", () => {
 
 process.on("unhandledRejection", console.error);
 process.on("uncaughtException", console.error);
+
 console.log("TOKEN:", process.env.BOT_TOKEN);
+
 client.login(process.env.BOT_TOKEN);
