@@ -1,3 +1,12 @@
+console.log("ENV CHECK:", process.env.NODE_ENV);
+console.log("TOKEN EXISTS:", !!process.env.BOT_TOKEN");
+
+const { Client, GatewayIntentBits } = require("discord.js");
+require("dotenv").config(); // only affects local, Railway ignores this
+
+const client = new Client({
+  intents: [GatewayIntentBits.Guilds]
+});
 const {
   Client,
   GatewayIntentBits,
